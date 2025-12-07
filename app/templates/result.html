@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}評分結果 - 考卷評分系統{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">評分結果</h2>
+            </div>
+            <div class="card-body">
+                {% if file_info %}
+                <div class="mb-4">
+                    <h5>上傳的考卷圖片：</h5>
+                    <div class="text-center">
+                        <img src="{{ url_for('static', filename='uploads/' + file_info.path.split('/')[-1]) }}" alt="考卷圖片" class="img-fluid rounded exam-image">
+                    </div>
+                </div>
+                <hr>
+                {% endif %}
+
+                <h5>評分結果：</h5>
+                <div class="result-container">
+                    {% if result %}
+                        {% if 'nl2br' in filters %}
+                            {{ result|safe|nl2br }}
+                        {% else %}
+                            {{ result|safe|replace('\n', '<br>')|safe }}
+                        {% endif %}
+                    {% endif %}
+                </div>
+                <div class="d-grid gap-2 mt-4">
+                    <a href="{{ url_for('main.index') }}" class="btn btn-primary">返回上傳頁面</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

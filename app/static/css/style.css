@@ -1,0 +1,29 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.result-container {
+    white-space: pre-line;
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+/* Custom filter for converting newlines to <br> */
+.nl2br {
+    white-space: pre-wrap;
+}
+
+.exam-image {
+    max-height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+/* Mobile responsive image */
+@media (max-width: 768px) {
+    .exam-image {
+        max-height: 300px;
+    }
+}

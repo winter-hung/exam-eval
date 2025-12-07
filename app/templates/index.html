@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}上傳考卷 - 考卷評分系統{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">上傳考卷</h2>
+            </div>
+            <div class="card-body">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="exam_file" class="form-label">選擇考卷檔案 (支援 .txt, .jpg, .jpeg, .png 格式)</label>
+                        <input class="form-control" type="file" id="exam_file" name="exam_file" accept=".txt,.jpg,.jpeg,.png" required>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">上傳並評分</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
